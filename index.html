@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ranjithkumar Kuna — Personal Brand & Blog</title>
+  <meta name="description" content="Personal branding site and blog of Ranjithkumar Kuna" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">RK</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html" class="btn small">Contact</a>
+      </nav>
+      <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-text">
+        <h1>Hi, I'm <span class="accent">Ranjithkumar Kuna</span>.</h1>
+        <p class="subtitle">I help brands and ideas stand out online through clean, colorful, and performant web experiences. Welcome to my personal site and blog.</p>
+        <div class="cta">
+          <a href="services.html" class="btn primary">View Services</a>
+          <a href="blog.html" class="btn secondary">Read the Blog</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/profile.jpg" alt="Profile image" onerror="this.style.display='none'" />
+      </div>
+    </section>
+
+    <section class="container section">
+      <h2>What I Do</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Web Design</h3>
+          <p>Modern, accessible designs that reflect your brand and convert visitors into customers.</p>
+        </article>
+        <article class="card">
+          <h3>Development</h3>
+          <p>Fast, responsive sites built with best practices for performance and SEO.</p>
+        </article>
+        <article class="card">
+          <h3>Content</h3>
+          <p>Technical writing and blog publishing to tell your story and grow organic reach.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section">
+      <h2>Featured Posts</h2>
+      <div class="posts">
+        <a class="post" href="posts/hello-world.html">
+          <h3>Hello, World 👋</h3>
+          <p>Why I started this site and what you can expect.</p>
+        </a>
+        <a class="post" href="posts/performance-tips.html">
+          <h3>5 Quick Performance Tips</h3>
+          <p>Simple wins to make any site feel faster.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Ranjithkumar Kuna. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="scripts.js"></script>
+</body>
+</html>

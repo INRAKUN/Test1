@@ -4,14 +4,57 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ranjithkumar Kuna — Personal Brand & Blog</title>
-  <meta name="description" content="Personal branding site and blog of Ranjithkumar Kuna" />
+  <title>Ranjithkumar Kuna — Life Coach</title>
+  <meta name="description" content="Life coaching and personal transformation by Ranjithkumar Kuna" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Home page light, uplifting hero */
+    .home-hero {
+      position: relative;
+      padding: 68px 20px;
+      margin-top: 10px;
+      border-radius: 20px;
+      background:
+        radial-gradient(900px 400px at 10% -10%, rgba(10,132,255,0.15), transparent 55%),
+        radial-gradient(700px 400px at 95% 5%, rgba(255,122,89,0.15), transparent 55%),
+        linear-gradient(180deg, #f9fbff, #f3f6ff);
+      border: 1px solid #e9eef8;
+      box-shadow: 0 10px 30px rgba(20, 40, 80, 0.06);
+    }
+    .home-hero .hero-grid {
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items: center;
+    }
+    .home-hero h1 { color: #0e1a2b; margin: 0 0 10px; font-size: clamp(28px, 4vw, 44px); }
+    .home-hero .subtitle { color: #425372; margin: 8px 0 18px; }
+    .home-hero .note { color: #5a6b8a; margin-top: 10px; }
+    .home-hero .hero-image img {
+      width: 100%; border-radius: 16px; border: 2px solid #e9eef8;
+      box-shadow: 0 8px 24px rgba(15, 30, 60, 0.08); object-fit: cover; height: 320px;
+    }
+    .btn.primary.light { background: linear-gradient(90deg, #0a84ff, #6cd4ff); color: #06203a; border: none; }
+    .btn.secondary.light { background: #ffffff; color: #0a84ff; border: 1px solid #dbe8ff; }
+
+    /* Life Moments gallery */
+    .gallery-section { padding: 32px 0; }
+    .gallery-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px; }
+    .gallery-header h2 { color: #0e1a2b; margin: 0; }
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+    }
+    .gallery-grid img {
+      width: 100%; height: 180px; object-fit: cover; border-radius: 14px;
+      border: 1px solid #e9eef8; box-shadow: 0 6px 18px rgba(15, 30, 60, 0.06);
+      transition: transform 120ms ease, box-shadow 120ms ease;
+    }
+    .gallery-grid img:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(15,30,60,0.10); }
+    @media (max-width: 1000px){ .home-hero .hero-grid { grid-template-columns: 1fr; } .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px){ .gallery-grid { grid-template-columns: 1fr; } }
+  </style>
 </head>
-<body>
+<body class="light"><!-- Start Home in light mode for uplifting feel -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html">RK</a>
@@ -22,43 +65,53 @@
         <a href="blog.html">Blog</a>
         <a href="contact.html" class="btn small">Contact</a>
       </nav>
-      <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+      <button id="themeToggle" aria-label="Toggle theme">☀️</button>
     </div>
   </header>
 
   <main>
-    <section class="hero container">
-      <div class="hero-text">
-        <h1>Hi, I'm <span class="accent">Ranjithkumar Kuna</span>.</h1>
-        <p class="subtitle">I help brands and ideas stand out online through clean, colorful, and performant web experiences. Welcome to my personal site and blog.</p>
-        <div class="cta">
-          <a href="services.html" class="btn primary">View Services</a>
-          <a href="blog.html" class="btn secondary">Read the Blog</a>
+    <!-- HERO updated to Life Coach -->
+    <section class="home-hero container">
+      <div class="hero-grid">
+        <div>
+          <h1>Life Coach</h1>
+          <p class="subtitle">
+            Helping individuals, teams, and families build clarity, confidence, and momentum—
+            through practical frameworks and compassionate guidance.
+          </p>
+          <div class="cta">
+            <a href="services.html" class="btn primary light">Explore Services</a>
+            <a href="contact.html" class="btn secondary light">Book a Discovery Call</a>
+          </div>
+          <p class="note">Specialties: 1‑to‑1 counselling • career clarity • resilience • corporate workshops • keynotes</p>
+        </div>
+        <div class="hero-image">
+          <!-- Replace with a local image if you prefer: assets/home-hero.jpg -->
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1400&auto=format&fit=crop" alt="Speaking to an engaged audience" />
         </div>
       </div>
-      <div class="hero-image">
-        <img src="assets/profile.jpg" alt="Profile image" onerror="this.style.display='none'" />
+    </section>
+
+    <!-- Life Moments Gallery: happy faces, life excitement, serving human family -->
+    <section class="container gallery-section">
+      <div class="gallery-header">
+        <h2>Life Moments</h2>
+        <a href="contact.html" class="btn secondary light">Schedule a Session</a>
+      </div>
+      <div class="gallery-grid">
+        <!-- Happy faces / excitement / families -->
+        <img src="https://images.unsplash.com/photo-1529336953121-ad5a0d43d0d2?q=80&w=1200&auto=format&fit=crop" alt="Team celebrating success" />
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop" alt="Smiling woman outdoors" />
+        <img src="https://images.unsplash.com/photo-1520975940369-790338222f95?q=80&w=1200&auto=format&fit=crop" alt="Parents and kids smiling together" />
+        <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=1200&auto=format&fit=crop" alt="Friends laughing" />
+        <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1200&auto=format&fit=crop" alt="Couple hiking in nature" />
+        <img src="https://images.unsplash.com/photo-1531123897727-8f129e39b369?q=80&w=1200&auto=format&fit=crop" alt="Family at a picnic" />
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Smiling man portrait" />
+        <img src="https://images.unsplash.com/photo-1516557070061-3f1e3ac0f71c?q=80&w=1200&auto=format&fit=crop" alt="Community volunteering together" />
       </div>
     </section>
 
-    <section class="container section">
-      <h2>What I Do</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Web Design</h3>
-          <p>Modern, accessible designs that reflect your brand and convert visitors into customers.</p>
-        </article>
-        <article class="card">
-          <h3>Development</h3>
-          <p>Fast, responsive sites built with best practices for performance and SEO.</p>
-        </article>
-        <article class="card">
-          <h3>Content</h3>
-          <p>Technical writing and blog publishing to tell your story and grow organic reach.</p>
-        </article>
-      </div>
-    </section>
-
+    <!-- Keep your featured posts section (optional) -->
     <section class="container section">
       <h2>Featured Posts</h2>
       <div class="posts">
@@ -79,6 +132,17 @@
       <p>© <span id="year"></span> Ranjithkumar Kuna. All rights reserved.</p>
     </div>
   </footer>
+
   <script src="scripts.js"></script>
+  <script>
+    // Keep light/dark toggle working; start in light by default for home
+    const toggle = document.getElementById('themeToggle');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const isLight = document.documentElement.classList.toggle('light');
+        toggle.textContent = isLight ? '☀️' : '🌙';
+      });
+    }
+  </script>
 </body>
 </html>

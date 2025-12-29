@@ -48,3 +48,21 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text);
 @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } .grid { grid-template-columns: 1fr; } .posts { grid-template-columns: 1fr; } }
 /* Light theme */
 .light { --bg: #ffffff; --text: #12131a; --muted: #5a5f70; --accent: #ff7a59; --accent-2: #0a84ff; --accent-3: #9b59b6; --card: #f4f6fb; --border: #e5e8f0; --btn: #0a84ff; }
+
+/* --- Services page enhancements --- */
+:root {
+  /* Gentle pastels that read well on light bg */
+  --surface-light: #ffffff;
+  --ink-strong: #0e1a2b;
+  --ink: #2b3b57;
+  --ink-muted: #5a6b8a;
+  --border-light: #e9eef8;
+}
+
+/* Ensure .light theme has softer borders and text */
+.light {
+  --card: #ffffff;
+  --border: #e9eef8;
+  --text: #12131a;
+  --muted: #5a5f70;
+}

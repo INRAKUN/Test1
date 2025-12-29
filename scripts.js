@@ -14,7 +14,7 @@ if (themeToggle) {
 
 // ===== 4-Color Pastel Theme Cycler =====
 // Theme classes to cycle through:
-const pastelThemes = ['theme-blue', 'theme-pink', 'theme-lavender', 'theme-mint'];
+const pastelThemes = ['theme-pink', 'theme-green', 'theme-lavender', 'theme-mint'];
 let currentThemeIndex = 0;
 
 // Apply initial theme (light + blue)

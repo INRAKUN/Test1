@@ -7,6 +7,18 @@
   <title>Contact — Ranjithkumar Kuna</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Page-specific tweaks (optional) */
+    .contact-wrapper { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; }
+    @media (max-width: 900px){ .contact-wrapper { grid-template-columns: 1fr; } }
+    .contact-form { display: grid; gap: 12px; }
+    .contact-form label { font-weight: 600; }
+    .contact-form input, .contact-form textarea, .contact-form select {
+      width: 100%; padding: 10px; border-radius: 10px; border: 1px solid var(--border);
+      background: #0c0f1a; color: var(--text);
+    }
+    .help { color: var(--muted); font-size: 0.95rem; }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -22,16 +34,103 @@
       <button id="themeToggle" aria-label="Toggle theme">🌙</button>
     </div>
   </header>
+
   <main class="container section">
     <h1>Contact</h1>
-    <p>Prefer email? Click here: <a class="accent" href="mailto:ranjithkumar.kuna@example.com">ranjithkumar.kuna@example.com</a></p>
-    <p class="muted">Replace the email above in <code>contact.html</code> with your real address.</p>
+    <p>Fill the form and I’ll get back to you shortly.</p>
+
+    <div class="contact-wrapper">
+      <!-- Contact Form -->
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/xjgvpnoe"
+        method="POST"
+        id="contactForm"
+        novalidate
+      >
+        <!-- Name -->
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your full name" required />
+        </div>
+
+        <!-- Email ID -->
+        <div>
+          <label for="email">Email ID</label>
+          <input id="email" name="email" type="email" placeholder="name@example.com" required />
+        </div>
+
+        <!-- Phone number -->
+        <div>
+          <label for="phone">Phone number</label>
+          <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210"
+                 pattern="^[+0-9 ()-]{7,}$" />
+          <p class="help">Accepted: digits, +, spaces, brackets, hyphens.</p>
+        </div>
+
+        <!-- Support on -->
+        <div>
+          <label for="support">Support on</label>
+          <select id="support" name="support" required>
+            <option value="" disabled selected>Select a topic</option>
+            <option>Personal website</option>
+            <option>Blog setup</option>
+            <option>Performance & accessibility</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <!-- Message (optional but useful) -->
+        <div>
+          <label for="message">Message (optional)</label>
+          <textarea id="message" name="message" rows="5" placeholder="Share more details..."></textarea>
+        </div>
+
+        <!-- Formspree spam prevention -->
+        <input type="hidden" name="_subject" value="New contact request from INRAKUN site" />
+        <input type="hidden" name="_language" value="en" />
+
+        <button type="submit" class="btn primary">Send</button>
+        <p id="formStatus" class="help"></p>
+      </form>
+
+      <!-- Point of Contact -->
+      <aside>
+        <h2>Point of Contact</h2>
+        <p>If you prefer email directly:</p>
+        <p>
+          <a class="accent" href="mailto:ranjithkumar.kuna@in.abb.com">
+            ranjithkumar.kuna@in.abb.com
+          </a>
+        </p>
+        <p class="help">Replace the email above with your real address.</p>
+      </aside>
+    </div>
   </main>
+
   <footer class="site-footer">
     <div class="container">
       <p>© <span id="year"></span> Ranjithkumar Kuna. All rights reserved.</p>
     </div>
   </footer>
+
   <script src="scripts.js"></script>
+  <script>
+    // Simple client-side validation feedback (optional)
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+
+    form?.addEventListener('submit', async (e) => {
+      // HTML5 validation first
+      if (!form.checkValidity()) {
+        e.preventDefault();
+        statusEl.textContent = 'Please fill all required fields correctly.';
+        statusEl.style.color = 'var(--accent)';
+      } else {
+        statusEl.textContent = 'Submitting...';
+        statusEl.style.color = 'var(--muted)';
+      }
+    });
+  </script>
 </body>
 </html>

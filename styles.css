@@ -66,3 +66,105 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text);
   --text: #12131a;
   --muted: #5a5f70;
 }
+
+/* ===== Pastel 4-Theme System (Light) =====
+   Apply one of: .theme-blue | .theme-pink | .theme-lavender | .theme-mint
+   These override the site's core tokens for a soft, professional look.
+*/
+
+/* Base light tokens (safe defaults) */
+.light {
+  --bg: #ffffff;
+  --text: #0e1a2b;
+  --muted: #5a6b8a;
+  --card: #ffffff;
+  --border: #e9eef8;
+}
+
+/* ---------- THEME 1: Light Blue ---------- */
+.theme-blue.light,
+.theme-blue {
+  --bg: #f6fbff;                 /* very light blue surface */
+  --card: #ffffff;
+  --border: #e7f0fb;
+  --text: #0e1a2b;
+  --muted: #5a6b8a;
+  --accent: #0a84ff;             /* primary accent (blue) */
+  --accent-2: #6cd4ff;           /* secondary accent (sky) */
+  --accent-3: #c6e6ff;           /* subtle highlight */
+  --btn: #0a84ff;
+}
+
+/* ---------- THEME 2: Light Pink ---------- */
+.theme-pink.light,
+.theme-pink {
+  --bg: #fff7f9;                 /* very light pink surface */
+  --card: #ffffff;
+  --border: #fbe7ee;
+  --text: #2b1630;
+  --muted: #6b4c66;
+  --accent: #ff7a9e;             /* rose */
+  --accent-2: #ffc2d6;           /* blush */
+  --accent-3: #ffd9e6;           /* highlight */
+  --btn: #ff7a9e;
+}
+
+/* ---------- THEME 3: Lavender ---------- */
+.theme-lavender.light,
+.theme-lavender {
+  --bg: #f8f6ff;                 /* lavender mist */
+  --card: #ffffff;
+  --border: #ebe7ff;
+  --text: #1a1233;
+  --muted: #5e5a8a;
+  --accent: #8b6de9;             /* soft violet */
+  --accent-2: #b7a6ff;           /* periwinkle */
+  --accent-3: #dcd6ff;           /* highlight */
+  --btn: #8b6de9;
+}
+
+/* ---------- THEME 4: Mint ---------- */
+.theme-mint.light,
+.theme-mint {
+  --bg: #f6fffb;                 /* mint wash */
+  --card: #ffffff;
+  --border: #e2f7ef;
+  --text: #0f2a22;
+  --muted: #567a6f;
+  --accent: #2cd3a8;             /* mint primary */
+  --accent-2: #7be3c7;           /* seafoam */
+  --accent-3: #c9f3e7;           /* highlight */
+  --btn: #2cd3a8;
+}
+
+/* Buttons tuned for light pastels */
+.btn.primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #06203a;
+  border: none;
+  font-weight: 600;
+}
+.btn.secondary {
+  background: var(--card);
+  color: var(--accent);
+  border: 1px solid var(--border);
+}
+
+/* Light surface cards & images */
+.card, .post, .post-article {
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+.hero-image img,
+.gallery-grid img {
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(15, 30, 60, 0.08);
+}
+
+/* Optional: gentle page background gradient (looks great with all themes) */
+.page-gradient {
+  background:
+    radial-gradient(900px 400px at 8% -5%, rgba(10,132,255,0.10), transparent 50%),
+    radial-gradient(700px 400px at 92% 0%, rgba(255,122,89,0.10), transparent 50%),
+    linear-gradient(180deg, var(--bg), #ffffff);
+}
